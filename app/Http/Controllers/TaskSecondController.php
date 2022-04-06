@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 class TaskSecondController
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function solution()
     {
         $rangeNumbers = range(0, 10000);

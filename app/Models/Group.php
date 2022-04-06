@@ -11,21 +11,25 @@ class Group extends Model
 
     const ROOT_ID = 0;
 
-    public function scopeRoot()
-    {
-        return $this->where('id_parent', self::ROOT_ID)->get();
-    }
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function childs()
     {
         return $this->hasMany(self::class, 'id_parent', 'id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function parent()
     {
         return $this->hasOne(self::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function products()
     {
         return $this->hasMany(\App\Models\Product::class, 'id_group');

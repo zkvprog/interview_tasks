@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class GroupsController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $groups = Group::all();
@@ -28,6 +31,10 @@ class GroupsController extends Controller
         return view('tasks.task4', ['groups' => $rootGroups, 'products' => $products]);
     }
 
+    /**
+     * @param Group $group
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function show(Group $group)
     {
         $groups = Group::all();

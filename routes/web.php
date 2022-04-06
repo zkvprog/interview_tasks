@@ -12,9 +12,3 @@ Route::get('/task4/{group}', [\App\Http\Controllers\GroupsController::class, 'sh
 
 Route::get('/task5', [\App\Http\Controllers\AjaxFormController::class, 'create']);
 Route::post('/task5', [\App\Http\Controllers\AjaxFormController::class, 'store']);
-
-Route::get('/token', function (Request $request) {
-    $token = $request->session()->token();
-
-    $token = csrf_token();
-});

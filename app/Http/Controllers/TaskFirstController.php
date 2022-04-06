@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 class TaskFirstController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function solution()
     {
         $data = [
