@@ -9,12 +9,22 @@ class TreeBuilderService
     public $data;
     public $rootId;
 
+    /**
+     * TreeBuilderService constructor.
+     * @param Collection $data
+     * @param int $rootId
+     */
     public function __construct(Collection $data, $rootId = 0)
     {
         $this->data = $data->keyBy('id');
         $this->rootId = $rootId;
     }
 
+    /**
+     * @param $parentId
+     * @param array $parentIds
+     * @return array
+     */
     public function buildTree($parentId, $parentIds = [])
     {
         $tree = [];
@@ -34,6 +44,10 @@ class TreeBuilderService
         return $tree;
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
     public function getParentsIds($id)
     {
         $result[] = $id;
@@ -47,6 +61,10 @@ class TreeBuilderService
         return $result;
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
     public function getChildsIds($id)
     {
         $result = [];
